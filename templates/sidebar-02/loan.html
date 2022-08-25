@@ -1,0 +1,41 @@
+{% extends 'sidebar-02/index.html' %}
+{% block content %}
+<h2><strong>Loan Calculation</strong></h2>
+<table class="table table-success table-striped " id="premium1">
+    <thead>
+        <tr>
+            <th scope="col">Sr.No.</th>
+            <th scope="col">Review Rating</th>
+            <th scope="col">Successful Transaction</th>
+        </tr>
+    </thead>
+    <tbody>	
+        {% for res in df3 %}
+            <tr>
+                <th scope="row">{{ loop.index }}</th>
+                <td>{{ res.Rating_review}}</th>
+                <td>{{ res.Successful_trx }}</td>
+            </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+<h6>rrbar= {{ rrbar }}, nsbar= {{ nsbar }}</h6>
+<table class="table table-success table-striped " id="premium">
+    <thead>
+        <tr>
+            <th scope="col">Sr.No.</th>
+            <th scope="col">loan amount</th>
+        </tr>
+    </thead>
+    <tbody>	
+        {% for res in loan %}
+            <tr>
+                <th scope="row">{{ loop.index }}</th>
+                <td>{{ res.Inst_amt }}</td>
+            </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

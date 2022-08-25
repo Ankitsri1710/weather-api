@@ -1,0 +1,24 @@
+{% extends 'sidebar-02/index.html' %}
+{% block content %}
+<h2><strong>Insurance Calculation</strong></h2>
+<h6> Premium on Rate = {{ rate }}, xbar = {{ xbar }}, ybar = {{ ybar }}, xhat = {{ xhat }}, yhat = {{ yhat }} </h6>
+<table class="table table-success table-striped " id="premium">
+    <thead>
+        <tr>
+            <th scope="col">Sr.No.</th>
+            <th scope="col">Premium amount</th>
+            <th scope="col">Value of Contract(Randomly generated)</th>
+        </tr>
+    </thead>
+    <tbody>	
+        {% for res in Premium %}
+            <tr>
+                <th scope="row">{{ loop.index }}</th>
+                <td>{{ res.Premium_amt }}</td>
+                <td>{{ res.VOC }}</td>
+            </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
